@@ -1,0 +1,294 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Gochi Hand", cursive;
+  font-size: 1.6rem;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* css  */
+
+:root {
+  --bgColor: #eeedde;
+  --textColor: #203239;
+  --sectionMargin: 15rem;
+  --headingMargin: 1.2rem;
+}
+
+::selection {
+  background-color: var(--textColor);
+  color: var(--bgColor);
+}
+
+html {
+  background-color: var(--bgColor);
+}
+
+body {
+  text-transform: capitalize;
+  color: var(--textColor);
+}
+
+p {
+  line-height: 1.4;
+}
+
+.container {
+  width: min(1200px, 95%);
+  margin-inline: auto;
+}
+
+section {
+  margin-top: var(--sectionMargin);
+}
+
+.heading {
+  font-size: 4.2rem;
+  margin-bottom: var(--headingMargin);
+}
+
+.btn {
+  padding: 0.7rem 1.4rem;
+  color: var(--bgColor);
+  background-color: var(--textColor);
+  border-radius: 1rem;
+  font-size: 2.4rem;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* header  */
+
+#header h1 {
+  font-size: 8rem;
+  line-height: 1.25;
+}
+
+#header {
+  margin-top: 5rem;
+}
+
+#header-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#header img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/* header  */
+
+/* about  */
+#about p {
+  font-size: 2.6rem;
+}
+/* about  */
+
+/* skills  */
+.skill-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.4rem;
+}
+.skill {
+  padding: 0.7rem 1.4rem;
+  border: 3px solid var(--textColor);
+  border-radius: 1rem;
+  font-size: 2.6rem;
+}
+/* skills  */
+
+/* projects  */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 2.4rem;
+}
+.card {
+  border-radius: 1rem;
+  border: 3px solid var(--textColor);
+  padding: 3.2rem;
+}
+
+.card h4 {
+  font-size: 3.2rem;
+}
+.card p {
+  font-size: 2.6rem;
+}
+
+/* projects  */
+
+/* contact  */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10rem;
+}
+
+.contact-form {
+  width: 100%;
+}
+.input {
+  padding: 0.7rem 1.4rem;
+  background-color: transparent;
+  border: 3px solid var(--textColor);
+  margin-bottom: 1.4rem;
+  border-radius: 1rem;
+  display: block;
+  font-size: 2.4rem;
+  resize: none;
+  width: 100%;
+}
+
+.contact-form .btn {
+  width: 100%;
+}
+
+.contact-info h4 {
+  font-size: 2.8rem;
+  margin-bottom: var(--headingMargin);
+}
+
+.contact-info p {
+  font-size: 2.4rem;
+}
+.contact-info p .dot {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 3.2px solid var(--textColor);
+  margin-right: 1rem;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* contact  */
+
+/* footer */
+#footer {
+  margin-top: 20rem;
+  text-align: center;
+}
+
+#footer hr {
+  background-color: var(--textColor);
+  border-top: 3px solid var(--textColor);
+}
+#footer p {
+  padding-block: 2.4rem;
+  font-size: 2.6rem;
+}
+/* footer */
+
+/* responsive  */
+@media only screen and (max-width: 786px) {
+  #header-grid {
+    grid-template-columns: 1fr;
+  }
+  #header-grid img {
+    order: 1;
+  }
+  #header-grid h1 {
+    order: 2;
+    text-align: center;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-info h4:nth-child(1) {
+    margin-top: 3rem;
+  }
+}
+/* responsive  */
