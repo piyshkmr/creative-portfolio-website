@@ -133,9 +133,17 @@
             action="https://formspree.io/f/mgerowbw"
             class="contact-form"
           >
-            <input type="text" name="name" placeholder="Name" class="input" />
+            <input
+              type="text"
+              minlength="3"
+              required
+              name="name"
+              placeholder="Name"
+              class="input"
+            />
             <input
               type="email"
+              required
               name="email"
               placeholder="Email"
               class="input"
@@ -144,6 +152,7 @@
               class="input"
               name="message"
               rows="3"
+              required
               placeholder="Message"
             ></textarea>
             <button type="submit" class="btn">Send</button>
